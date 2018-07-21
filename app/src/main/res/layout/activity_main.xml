@@ -340,7 +340,6 @@
            android:textDirection="ltr"
            android:textSize="16sp"
            android:textColor="@color/colorPrimary">
-
        </TextView>
        <LinearLayout
            android:padding="10px"
