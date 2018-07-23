@@ -361,7 +361,25 @@
            </TextView>
 
        </LinearLayout>
+       <LinearLayout
+           android:padding="10px"
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="CPU usage:"
+               android:textDirection="ltr">
+           </TextView>
+           <TextView
+               android:id="@+id/CPUpercentage"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textDirection="rtl">
+           </TextView>
 
+       </LinearLayout>
    </LinearLayout>
 </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.mohammadraoofnia.sysinfo;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -11,8 +12,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         // initiating necessary objects
         ////battery
         IntentFilter ifilterBattery = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -38,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 ((TextView)findViewById(R.id.BatteryStatus)).setText(BatteryStat);
             }
         },ifilterBattery);
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //getting phone general information
         ((TextView)findViewById(R.id.Serial)).setText(Build.SERIAL);
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
         float batteryPct = level / (float)scale;
         ((TextView)findViewById(R.id.BatteryLevel)).setText("%" + String.format("%2.0f" ,batteryPct*100));
+
     }
 
 }
